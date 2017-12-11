@@ -3,19 +3,16 @@ public class LimitedRoomScenario extends RoomScenario{
     private int limit;
     private String limitConsequence;
     public LimitedRoomScenario(){
-        this.type="Limited";
     }
     public LimitedRoomScenario(String description, String consequence, String limitConsequence, int HpChange, int newLoc, int limit){
         super(description, consequence, HpChange, newLoc);
+        this.type="limited";
         this.limit=limit;
         this.limitConsequence=limitConsequence;
     }
-    public int deltaHp(int HP){
-        if(limit>0){
-            return super.deltaHP(HP);
-        }else{
-            return 0;
-        }
+    public LimitedRoomScenario(String description, String consequence, String limitConsequence, int HpChange, int newLoc, int limit, boolean hidden){
+        this(description, consequence, limitConsequence, HpChange, newLoc, limit);
+        this.hidden=hidden;
     }
     public void displayCons(){
         if(limit>0){
@@ -23,9 +20,17 @@ public class LimitedRoomScenario extends RoomScenario{
         }else{
             System.out.println(limitConsequence);
         }
+    }    
+    public int deltaHP(int HP){
+        if (limit>0){
+            return super.deltaHP(HP);
+        }else{
+            return HP;
+        }
+        
     }
     public void decrementLimit(){
-        limit--;
+        limit=limit-1;
     }
 	public int getLimit() {
 		return limit;

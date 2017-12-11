@@ -8,6 +8,7 @@ public class Chara{
     public Chara(int hp, int loc, int atk){
         this.hp=hp;
         this.loc=loc;
+        this.atk=atk;
     }
     public void setHp(int newHp){
         hp=newHp;
@@ -21,4 +22,10 @@ public class Chara{
     public int getLoc(){
         return loc;
     }
+	public int getAtk() {
+		return atk;
+	}
+	public void addAtk(int up) {
+		atk = atk+up;
+	}
 }
