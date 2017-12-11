@@ -1,3 +1,4 @@
+package com.raveture;
 import java.util.ArrayList;
 
 public class Room{

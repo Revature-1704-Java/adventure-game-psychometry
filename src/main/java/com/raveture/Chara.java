@@ -1,9 +1,11 @@
+package com.raveture;
 public class Chara{
     private int hp;
     private int loc;
+    private int atk;
     public Chara(){
     }
-    public Chara(int hp, int loc){
+    public Chara(int hp, int loc, int atk){
         this.hp=hp;
         this.loc=loc;
     }

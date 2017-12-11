@@ -1,9 +1,13 @@
+package com.raveture;
 public class RoomScenario implements Scenario{
-    private String description, consequence;
+    protected String description, consequence, type;
     private int HpChange, newLoc;
+
     public RoomScenario(){
+        this.type="none";
     }
     public RoomScenario(String description, String consequence, int HpChange, int newLoc){
+        this();
         this.description = description;
         this.consequence = consequence;
         this.HpChange = HpChange;
@@ -20,5 +24,8 @@ public class RoomScenario implements Scenario{
     }
     public void displayCons(){
         System.out.println(consequence);
+    }
+    public String getType(){
+        return type;
     }
 }
